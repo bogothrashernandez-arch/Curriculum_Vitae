@@ -1,0 +1,254 @@
+/* RESET GENERAL */
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  color: #1e1e1e;
+}
+
+:root {
+  --escarlata: #c1121f;
+  --gris: #6c757d;
+  --gris-claro: #eaeaea;
+  --blanco: #ffffff;
+  --negro: #1e1e1e;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor-principal {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: var(--blanco);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* COLUMNA IZQUIERDA */
+.columna-izquierda {
+  flex: 1;
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.foto-perfil {
+  width: 70%; /* Ajusta según tu diseño */
+  box-shadow: 0 8px 16px rgba(216, 29, 29, 0.3);
+  padding: 10px;
+  border-radius: 12px; /* Bordes redondeados suaves */
+  transition: transform 0.8s ease;
+  object-fit: cover;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+}
+.seccion-izquierda {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.titulo-izquierda {
+  color: var(--escarlata);
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--escarlata);
+  padding-bottom: 5px;
+  align-items: center;
+}
+
+.habilidades li {
+  margin-bottom: 10px;
+  list-style: none;
+  align-items: center;
+}
+
+/* BOTONES HABILIDADES */
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.habilidades li {
+  list-style: none;
+  background-color: var(--gris);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: var(--blanco);
+  transition: background-color 0.3s ease;
+}
+
+.habilidades li:hover {
+  background-color: var(--escarlata);
+}
+
+/* ESTILO PARA HABILIDADES TECNICAS */
+.lista-habilidades {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.elemento-lista-lateral {
+  background-color: var(--gris);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: var(--blanco);
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.elemento-lista-lateral:hover {
+  background-color: var(--escarlata);
+}
+/* COLUMNA DERECHA */
+.columna-derecha {
+  flex: 2;
+  padding: 40px 30px;
+  background-color: var(--gris-claro);
+}
+
+/* TÍTULOS PRINCIPALES */
+.titulo-ppal {
+  color: var(--escarlata);
+  font-size: 28px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.nombre {
+  font-size: 32px;
+  color: var(--negro);
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.titulo-profesion {
+  font-size: 20px;
+  color: var(--gris);
+  margin-bottom: 20px;
+}
+
+/* TARJETAS DE SECCIÓN (bloques separados con hover) */
+.seccion-derecha {
+  background-color: var(--blanco);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.seccion-derecha:hover {
+  background-color: #fceaea;
+  transform: translateY(-5px);
+}
+
+/* TÍTULOS DE CADA SECCIÓN */
+.titulo-sección-ppal {
+  color: var(--escarlata);
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--escarlata);
+  border-top:  2px solid var(--escarlata);
+  padding-bottom: 5px;
+}
+
+/* TEXTOS INTERNOS DE CADA BLOQUE */
+.seccion-derecha h4 {
+  font-size: 18px;
+  margin-top: 15px;
+  color: var(--negro);
+}
+
+.seccion-derecha p {
+  margin: 5px 0;
+  color: var(--gris);
+}
+
+.seccion-derecha ul {
+  margin: 10px 0 15px;
+  padding-left: 20px;
+  color: var(--negro);
+}
+
+.Contáctame {
+  align-items: center;
+}
+
+section, .contenedor, .foto-perfil {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BLOQUES DE SECCIONES */
+.experiencia-laboral,
+.contenedor-estudios,
+.contenedor-estudios-complementarios,
+.contenedor.referencias {
+  background-color: #d8d8d8;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.experiencia-laboral:hover,
+.contenedor-estudios:hover,
+.contenedor-estudios-complementarios:hover,
+.contenedor.referencias:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(216, 29, 29, 0.3);
+}
+
+.nombre {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase; /* Todo en mayúsculas */
+  line-height: 1;
+}
+
+h1 {
+    margin: 0;
+    text-align: right; /* Alinea todo el nombre a la derecha */
+}
+
+.linea1,
+.linea2 {
+    display: block; /* Asegura que cada parte esté en una línea independiente */
+}
+
+.linea1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.linea2 {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #c91919;
+    letter-spacing: 3.7px; /* Ajusta este valor hasta que coincida */
+}
+
+.subtitulo {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #666;
+}
