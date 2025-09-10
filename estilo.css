@@ -252,3 +252,44 @@ h1 {
     margin-top: 5px;
     color: #666;
 }
+
+}
+
+.contacto-box {
+  margin-top: auto; /* empuja hacia abajo */
+  background: #d8d8d8;
+  color: var(--texto);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-box h3 {
+  margin-top: 0;
+  color: var(--rojo);
+}
+
+.contacto-box input,
+.contacto-box textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.contacto-box button {
+  background: var(--rojo);
+  color: #a81f1f;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contacto-box button:hover {
+    background: #d8d8d8;
+}
