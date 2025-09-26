@@ -1,0 +1,414 @@
+/* =========================================
+   VARIABLES Y RESET GENERAL
+   ========================================= */
+
+/* Variables globales de color (paleta principal) */
+:root {
+  --escarlata: #c1121f; /* Rojo principal */
+  --gris: #6c757d;      /* Gris medio */
+  --gris-claro: #eaeaea; /* Gris claro de fondo */
+  --blanco: #ffffff;    /* Blanco puro */
+  --negro: #1e1e1e;     /* Negro profundo */
+}
+
+/* Reset base para todo el documento */
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif; /* Fuente general */
+  margin: 0; /* Quita márgenes por defecto */
+  padding: 0; /* Quita relleno por defecto */
+  background: linear-gradient(to right, #e0f7fa, #ffffff); /* Fondo degradado */
+  color: var(--negro); /* Color principal de texto */
+}
+
+/* =========================================
+   LAYOUT GENERAL (estructura base)
+   ========================================= */
+
+/* Contenedor global (CV dividido en 2 columnas) */
+.contenedor-principal {
+  display: flex; /* Crea columnas izquierda/derecha */
+  max-width: 1200px;
+  margin: 40px auto; /* Centrado horizontal */
+  background-color: var(--blanco);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra exterior */
+}
+
+/* =========================================
+   COLUMNA IZQUIERDA (perfil + habilidades)
+   ========================================= */
+.columna-izquierda {
+  flex: 1; /* Ocupa 1 parte */
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 30px; /* Relleno interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado horizontal */
+}
+
+/* Imagen de perfil */
+.foto-perfil {
+  width: 70%; 
+  box-shadow: 0 8px 16px rgba(216, 29, 29, 0.3); /* Sombra roja */
+  padding: 10px; /* Marco interno */
+  border-radius: 12px; /* Bordes redondeados */
+  transition: transform 0.8s ease; /* Animación suave */
+  object-fit: cover; /* Ajuste sin deformar */
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05); /* Zoom al pasar el cursor */
+}
+
+/* Sección general dentro de columna izquierda */
+.seccion-izquierda {
+  width: 100%;
+  margin-bottom: 30px; /* Espaciado inferior */
+}
+
+/* Título dentro de columna izquierda */
+.titulo-izquierda {
+  color: var(--escarlata);
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase; /* Mayúsculas */
+  border-bottom: 2px solid var(--escarlata); /* Línea decorativa */
+  padding-bottom: 5px;
+  align-items: center;
+}
+
+/* =========================================
+   LISTAS DE HABILIDADES
+   ========================================= */
+
+/* Habilidades blandas (tipo chips) */
+.habilidades {
+  display: flex;
+  flex-wrap: wrap; /* Salto a nueva línea */
+  gap: 8px; /* Separación entre items */
+}
+
+.habilidades li {
+  list-style: none; /* Sin viñetas */
+  background-color: var(--gris);
+  padding: 8px 12px; /* Relleno interno */
+  border-radius: 20px; /* Forma pill */
+  font-weight: 500;
+  color: var(--blanco);
+  transition: background-color 0.3s ease; /* Suavidad cambio color */
+}
+
+.habilidades li:hover {
+  background-color: var(--escarlata); /* Rojo al hover */
+}
+
+/* Habilidades técnicas (mismo estilo que blandas) */
+.lista-habilidades {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.elemento-lista-lateral {
+  background-color: var(--gris);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: var(--blanco);
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.elemento-lista-lateral:hover {
+  background-color: var(--escarlata);
+}
+
+/* =========================================
+   COLUMNA DERECHA (contenido principal)
+   ========================================= */
+.columna-derecha {
+  flex: 2; /* El doble de ancho que la izquierda */
+  padding: 40px 30px; /* Espaciado interno */
+  background-color: var(--gris-claro);
+}
+
+/* =========================================
+   TÍTULOS PRINCIPALES (nombre + profesión)
+   ========================================= */
+.titulo-ppal {
+  color: var(--escarlata);
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.nombre {
+  font-size: 32px;
+  color: var(--negro);
+  margin: 5px 0;
+}
+
+.titulo-profesion {
+  font-size: 20px;
+  color: var(--gris);
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   SECCIONES DERECHA (bloques con hover)
+   ========================================= */
+.seccion-derecha {
+  background-color: var(--blanco);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Sombra ligera */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.seccion-derecha:hover {
+  background-color: #fceaea; /* Fondo rosado al hover */
+  transform: translateY(-5px); /* Flota hacia arriba */
+}
+
+/* Título dentro de cada bloque */
+.titulo-sección-ppal {
+  color: var(--escarlata);
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--escarlata);
+  border-top: 2px solid var(--escarlata);
+  padding-bottom: 5px;
+}
+
+/* Subtítulos y textos */
+.seccion-derecha h4 {
+  font-size: 18px;
+  margin-top: 15px;
+  color: var(--negro);
+}
+
+.seccion-derecha p {
+  margin: 5px 0;
+  color: var(--gris);
+}
+
+.seccion-derecha ul {
+  margin: 10px 0 15px;
+  padding-left: 20px; /* Sangría lista */
+  color: var(--negro);
+}
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA
+   ========================================= */
+section, .contenedor, .foto-perfil {
+  animation: fadeIn 0.8s ease-in; /* Aparece suavemente */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   BLOQUES EXTRA (experiencia, estudios, etc.)
+   ========================================= */
+.experiencia-laboral,
+.contenedor-estudios,
+.contenedor-estudios-complementarios,
+.contenedor.referencias {
+  background-color: #d8d8d8;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra intensa */
+  margin-bottom: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.experiencia-laboral:hover,
+.contenedor-estudios:hover,
+.contenedor-estudios-complementarios:hover,
+.contenedor.referencias:hover {
+  transform: translateY(-4px); /* Flota en hover */
+  box-shadow: 0 8px 16px rgba(216, 29, 29, 0.3); /* Resalta en rojo */
+}
+
+/* =========================================
+   ESTILO ESPECIAL PARA NOMBRE
+   ========================================= */
+.nombre {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+h1 {
+  margin: 0;
+  text-align: right; /* Todo a la derecha */
+}
+
+.linea1, .linea2 {
+  display: block;
+}
+
+.linea1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.linea2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #c91919;
+  letter-spacing: 3.7px; /* Espaciado entre letras */
+}
+
+.subtitulo {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color: #666;
+}
+
+/* =========================================
+   FORMULARIO DE CONTACTO
+   ========================================= */
+/*CAJA DE CONTACTO (contenedor general del formulario) */
+.contacto-box {
+  margin-top: auto; /* Empuja la caja hacia la parte inferior de la columna */
+  background: #d8d8d8; /* Fondo gris claro para diferenciar el bloque */
+  color: var(--texto); /* Color del texto (usa variable definida en :root) */
+  padding: 15px; /* Espaciado interno para que no pegue a los bordes */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(231, 6, 6, 0.1); /* Sombra sutil para dar profundidad */
+}
+
+/*TÍTULO DE LA CAJA DE CONTACTO */
+.contacto-box h3 {
+  margin-top: 0; /* Quita espacio arriba para que quede alineado al borde */
+  color: var(--rojo); /* Aplica color rojo al título (según variable definida) */
+}
+
+/*CAMPOS DE ENTRADA (nombre, correo, teléfono, mensaje) */
+.contacto-box input,
+.contacto-box textarea {
+  width: 90%; /* No ocupa el 100%, deja un margen interno */
+  padding: 10px; /* Espaciado dentro del campo para escribir cómodo */
+  margin-bottom: 10px; /* Espacio inferior entre los campos */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados en inputs y textarea */
+  font-family: inherit; /* Usa la misma fuente que el resto de la página */
+}
+
+/*TEXTAREA (campo para el mensaje, multilínea)
+   - Hereda de arriba, pero este selector existe para que si lo necesitas
+     luego puedas darle reglas propias (ej: altura, resize, etc.) */
+.contacto-box textarea {
+  /* Aquí podrías añadir: height: 120px; o resize: none; si lo requieres */
+}
+
+/*BOTÓN DE ENVIAR */
+.contacto-box button {
+  background: red; /* Fondo rojo por defecto */
+  color: #fff; /* Texto en blanco */
+  border: none; /* Elimina el borde por defecto del botón */
+  padding: 10px; /* Espaciado interno para hacerlo más grande y clickeable */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a "mano" al pasar encima */
+  transition: background 0.3s; /* Suaviza la transición de color al hover */
+}
+
+/*EFECTO HOVER DEL BOTÓN */
+.contacto-box button:hover {
+  background: #6c757d; /* Cambia a gris al pasar el cursor */
+}
+
+/* 📱 MEDIA QUERIES PARA MÓVILES */
+/* Se activan en pantallas pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+  /* Contenedor principal en columna (todo apilado) */
+  .contenedor {
+    display: flex;
+    flex-direction: column; /* Cambia de fila a columna */
+    padding: 10px;
+  }
+
+  /* Caja de contacto ocupa todo el ancho */
+  .contacto-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Inputs y textarea más anchos para mejor usabilidad */
+  .contacto-box input,
+  .contacto-box textarea {
+    width: 100%;
+    font-size: 14px; /* Letra un poco más pequeña */
+  }
+
+  /* Botón adaptado a pantallas táctiles */
+  .contacto-box button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+
+/* 📲 MEDIA QUERIES PARA TABLETS  */
+/* Se activan en pantallas medianas (481px a 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  /* Contenedor en dos columnas */
+  .contenedor {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Columna contacto + columna contenido */
+    gap: 20px; /* Separación entre columnas */
+  }
+
+  /* Caja de contacto ajustada */
+  .contacto-box {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Inputs y textarea */
+  .contacto-box input,
+  .contacto-box textarea {
+    font-size: 15px;
+  }
+}
+
+
+/* 📺 MEDIA QUERIES PARA TV/XL */
+@media (min-width: 1600px) {
+  /* Contenedor con más espacio */
+  .contenedor {
+    max-width: 1400px; /* Limita el ancho total */
+    margin: 0 auto; /* Centra el contenido */
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Contacto más pequeño y contenido más amplio */
+    gap: 40px;
+  }
+
+  /* Caja de contacto con más aire */
+  .contacto-box {
+    padding: 30px;
+    font-size: 18px;
+  }
+
+  /* Inputs y textarea más amplios */
+  .contacto-box input,
+  .contacto-box textarea {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  /* Botón más grande y vistoso */
+  .contacto-box button {
+    font-size: 18px;
+    padding: 14px;
+  }
+}
+
